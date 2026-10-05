@@ -1,0 +1,52 @@
+:root {
+  color-scheme: light;
+  --ink: #16202a; --muted: #4a5663; --canvas: #eef1f4; --surface: #ffffff; --line: #c3cad2;
+  --accent: #0f5f6b; --accent-ink: #ffffff;
+  --green-bg: #e3f4e8; --green: #14602c; --amber-bg: #fff1cc; --amber: #7a4e00; --red-bg: #fce4e4; --red: #9b1c1c;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+h1, h2, h3 { margin: 0 0 .5rem; line-height: 1.25; }
+h1 { font-size: 1.4rem; } h2 { font-size: 1.15rem; } h3 { font-size: 1rem; }
+
+/* Contrast guarantee: every field is dark text on white, in every state, including dropdown options. */
+input, select, textarea {
+  background-color: #fff !important; color: #16202a !important; -webkit-text-fill-color: #16202a;
+  border: 1.5px solid #5b6775; border-radius: 6px; padding: .55rem .7rem; font: inherit; width: 100%;
+}
+input::placeholder, textarea::placeholder { color: #5b6775; opacity: 1; }
+input:focus, select:focus, textarea:focus { outline: 3px solid #0f5f6b; outline-offset: 1px; border-color: #0f5f6b; }
+input:disabled, select:disabled { background-color: #e6e9ed !important; color: #3b4652 !important; -webkit-text-fill-color: #3b4652; }
+option { background: #fff; color: #16202a; }
+input[aria-invalid='true'], textarea[aria-invalid='true'] { border-color: var(--red); background-color: #fff6f6 !important; }
+input:-webkit-autofill { -webkit-text-fill-color: #16202a; box-shadow: 0 0 0 100px #fff inset; }
+
+button { font: inherit; border-radius: 6px; padding: .55rem 1rem; border: 1.5px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; font-weight: 600; }
+button.secondary { background: #fff; color: var(--accent); }
+button.danger { background: var(--red); border-color: var(--red); }
+button:focus-visible { outline: 3px solid #16202a; outline-offset: 2px; }
+button:disabled { background: #d5dae0; border-color: #aeb6bf; color: #3b4652; cursor: not-allowed; }
+
+.shell { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+.bar { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: space-between; background: var(--ink); color: #fff; padding: .75rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.bar .who { font-size: .9rem; color: #dbe3ea; }
+.bar button { background: transparent; border-color: #8fa0b0; color: #fff; padding: .35rem .7rem; font-size: .9rem; }
+.bar button[aria-pressed='true'] { background: #fff; color: var(--ink); border-color: #fff; }
+.row { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: .25rem; }
+.err { color: var(--red); font-size: .88rem; margin-top: .25rem; font-weight: 600; }
+.banner { padding: .6rem .8rem; border-radius: 6px; margin-bottom: 1rem; font-weight: 600; }
+.banner.bad { background: var(--red-bg); color: var(--red); } .banner.ok { background: var(--green-bg); color: var(--green); }
+.muted { color: var(--muted); font-size: .9rem; }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
+td input { max-width: 110px; }
+.badge { display: inline-block; padding: .15rem .6rem; border-radius: 999px; font-weight: 700; font-size: .82rem; border: 1.5px solid currentColor; }
+.GREEN { background: var(--green-bg); color: var(--green); } .YELLOW { background: var(--amber-bg); color: var(--amber); } .RED { background: var(--red-bg); color: var(--red); }
+.st { background: #e8edf2; color: var(--ink); border-color: #7a8794; }
+.demo { display: grid; gap: .5rem; margin-top: .75rem; }
+.demo button { text-align: left; }
+@media (max-width: 600px) { .shell { padding: .5rem; } }
